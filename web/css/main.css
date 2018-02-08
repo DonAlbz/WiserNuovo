@@ -270,6 +270,11 @@ Tibi's custom styles
     border-left-style: solid;
     border-left-width: 1px;
 }
+
+.mashupInModifica{
+    box-shadow: 0 0 30px #2691ed;
+    opacity: 1;
+}
 .btn-fb{
     color: #fff;
     background-color:#3b5998;

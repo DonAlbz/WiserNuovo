@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var mashupInModifica;
 
 $(document).ready(function () {
     $('.dropdown-submenu a.test').on("click", function (e) {
@@ -149,6 +150,14 @@ function apriWizard() {
 var mashSel;
 var nomeMashSel;
 function modificaMashUp(nomeMU, idMU) {
+    
+    //Modifiche di Alby per illuminazione mashup in modifica
+    alert($(this).attr('class'));/*.parents('.panel-default')*/
+    $(this).parents('.panel-default').addClass("mashupInModifica");
+    mashupInModifica = $(this).parents('.panel-default'); 
+    mashupInModifica.addClass("mashupInModifica");
+    
+    //Codice Tibi    
     mashSel = idMU;
     //$(".mashCollapse").collapse("hide");
     $("#idMash").val(idMU);
@@ -168,6 +177,7 @@ function modificaMashUp(nomeMU, idMU) {
         id = id.replace(nomeMU + "_", "");
         $("#DIV" + id).find(".aggr").attr("disabled", true).removeClass("btn-primary").addClass("btn-default");
     });
+    
 }
 
 function confermaMashUp(nomeMU) {
