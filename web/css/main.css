@@ -265,6 +265,11 @@ Tibi's custom styles
 #login-dp .form-group {
     margin-bottom: 10px;
 }
+#mainContainer{
+    border-left: #c4c2c2;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
 .btn-fb{
     color: #fff;
     background-color:#3b5998;

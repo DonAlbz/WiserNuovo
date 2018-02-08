@@ -153,7 +153,7 @@
         <!-- Pagina centrale -->
 
         <!-- Div data service -->
-        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div id="mainContainer" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
             <div class="container-fluid"> 
                 <div class="row">
                     <div class="row">
