@@ -1,0 +1,160 @@
+
+/* ==========================================================================
+   Sara's custom styles
+   ========================================================================== */
+.modal-header {background: #5cb85c;color: white;}
+
+
+/* voto nello span*/
+
+.labelVoto {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    vertical-align: baseline;white-space: nowrap;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: 	#286090; 
+    float: right;
+    width:30pt;
+    text-align: center;
+}
+
+#confirm{ 
+    margin-left: 40%;
+}
+
+
+.listVotiOl .ui-selected { 
+    background:#286090;
+    color: white; 
+}
+.listVotiOl { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+}
+.listVotiOl li { 
+    margin: 3px;
+    padding: 0.65em; 
+    font-size: 1em;
+    height: 40px;
+    margin-left: 10pt;
+}
+.listaAggregazioni { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%;
+}
+.listaAggregazioni li{ 
+    margin-top: 4pt;
+    padding: 0.65em; 
+    font-size: 1em;
+    height: 40px;
+    margin-left: 10pt;
+}
+
+.btn a{
+    color:white;
+}
+.btn a:hover{
+    color:white;
+}
+
+.btn a:hover {
+    text-decoration: none;
+}
+
+.feedbackVoto{
+    background: transparent !important;
+    color: #1aa51c;
+    border-style: solid;    
+    border-color: #dcecdc;
+    border-width: 2px;
+    border-spacing: 5px;
+    top: 20%;
+    left: 7%;
+    position: absolute;
+    margin-left: 105px;
+}
+
+.msgModal{
+    height: 300px !important;
+}
+
+
+.listaAggregazioni{    
+
+    width:635px; 
+    height: 280px; 
+    overflow-y: scroll; 
+
+}
+.msgModal{
+    margin-top: 16px;
+}
+.state-icon {
+    left: -5px;
+}
+
+.checkListModal:first-child {
+    border-top-left-radius: 0px !important; 
+    border-top-right-radius: 0px !important; 
+
+}
+.checkListModal:last-child {
+
+    border-bottom-right-radius: 0px !important; 
+    border-bottom-left-radius: 0px !important;
+}
+
+
+.checkListModal:active, .checkListModal:active:focus, .checkListModal:active:hover, .checkListModal.active,
+.check-list-box li:active{
+    z-index: 0 !important;
+    color: #fff !important;
+    background-color: #286090 !important;
+    background-image: -webkit-linear-gradient(none,428bca 0,428bca 0%) !important;
+
+}
+
+.checkListModal.active, .checkListModal.active:hover, .checkListModal.active:focus {
+    text-shadow: 0 -1px 0 #286090 !important;
+    background-image: -webkit-linear-gradient(top,#286090 0,#286090 0%) !important;
+    background-image: -o-linear-gradient(top,#286090 0,#286090 0%) !important;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#286090),to(#286090)) !important;
+    background-image: linear-gradient(to bottom,#286090 0,#286090 0%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#428bca', endColorstr='#428bca', GradientType=0) !important;
+    background-repeat: no-repeat !important;
+
+
+
+}
+
+.contentVota{
+    width:500pt;
+}
+
+.glyphicon-unchecked{
+    color:steelblue !important;
+}
+
+#divAccount{
+    width: 100%;
+    height: 10px; 
+    border-bottom: 1px solid #c5c5c5; 
+    text-align: center;
+}
+#divAccount span{
+    font-size: 1em;
+    padding: 0 5px;
+    background-color: white;
+    color: gray;
+}

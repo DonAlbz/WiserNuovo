@@ -1,0 +1,345 @@
+/* ==========================================================================
+   Mattia's custom styles
+   ========================================================================== */
+.autoc{
+    background: white;
+    padding: 6px 12px;
+    
+}
+
+.a-button{
+    padding: 5px 10px;
+    display: inline-block;
+    color: #343838;
+    background: #e5e9ec;
+}
+
+.autoc-selected{
+    background: #ccf2ff;
+    font-weight: 500;
+}
+
+#autocompl{
+    border-left: thin;
+    border-bottom: thin;
+    border-right: thin;
+    border-top: 0px;
+    border-color: black;
+    border-style: solid;
+    position: absolute;
+    z-index: 9999;
+}
+
+.btnHome{
+    color: #9d9d9d !important;
+}
+.pag-top li a{
+    z-index: 1000;
+}
+
+.pag-top{
+    margin-right: 31% !important;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+Tibi's custom styles
+   ========================================================================== */
+
+.btnTransparent{
+    border-color: transparent;
+    background: transparent;
+}
+.well{
+    background-image: none;
+    background-color: white !important;
+}
+
+.mybtn-primary{
+    color: #fff;
+    background-color: #2691ed;
+    border-color: #2e6da4;
+}
+
+
+.mybtn-primary:hover{
+    color: #fff !IMPORTANT;
+    background-color: #1a73c0;
+    border-color: #204d74;
+}
+
+.mybtn-primary:focus{
+    color: #fff !IMPORTANT;
+    background-color: #1a73c0;
+    border-color: #204d74;
+}
+
+.half {
+    position:relative;
+}
+.font{
+    font-size:6em;
+}
+.half:before {
+
+      content: "\e006"; /* put here default icon code*/
+      width: 47%;
+      display: block;
+      position: absolute;
+      overflow: hidden;
+
+}
+.half:after {
+    content: "\e007"; /* put here icon-empty code*/
+}
+
+.half-heart:before {
+
+      content: "\e005"; /* put here default icon code*/
+      width: 57%;
+      display: block;
+      position: absolute;
+      overflow: hidden;
+
+}
+.half-heart:after {
+    content: "\e143"; /* put here icon-empty code*/
+}
+
+.pos {
+    margin-top: -39px !important;
+    position: absolute;
+}
+
+.menu_links:hover{
+    cursor : pointer;
+    background-color: #ACE1AF;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.autoc{
+    cursor: pointer;
+}    
+
+.autoc:hover {
+    background-color: #ccf2ff;
+}
+
+
+.mouseOver:hover, .mouseOver:focus{
+    color: #333 !important;
+    background-color: #ccf2ff !important;
+    background-image: none !important;
+}
+
+.colore{
+    color: green;
+}
+
+.margine {
+    margin-top: -8px !important;
+}
+
+.container-fluid {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+
+.aggr {
+    position: relative !important;    
+    font-size: 20px !important;
+    border-radius: 60%;
+    width: 42px;
+}
+
+
+
+.delAggr {
+    position: relative !important;
+
+}
+
+.dimension {
+    height: 33.56px !important;
+    width: 79.93px !important;
+    border-radius: 8px;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+.glyphicon-remove {
+    color: #b92c28;
+}
+
+.puntatore:hover {
+    cursor: pointer;
+}
+
+.posizionaModal {
+    margin-top: 130px;
+}
+
+/* ==========================================================================
+   Alb's custom styles
+   ========================================================================== */
+
+.left {
+  float: left;
+  margin-left: 13px
+}
+.glyphicon-search {
+	color: #fff
+}
+.mobile_search {
+	margin: 6px 0 5px 0;
+}
+
+.navbar{
+    min-height: 115px;
+}
+.navbar-nav{
+    display: flex;
+}
+.height-40{
+    height: 40px;
+}
+
+.white{
+    color:white;
+}
+
+
+#container-nav{
+    padding-top: 30px;
+}
+#nav-centrata{
+    width:100%;
+    position:  relative;
+}
+
+
+.pulsante-dropdown{
+    width: 134%;
+}
+.modal-open{
+    padding-right: 0px !important;
+}
+
+#login-dp{
+    min-width: 275px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    /*background-color:rgba(255,255,255,.8);*/
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+   /* background-color:rgba(255,255,255,.8);*/
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+
+
+
+.feedbackMashup{
+    background: transparent !important;
+    color: #1aa51c;
+    border-style: solid;    
+    border-color: #dcecdc;
+    border-width: 2px;
+    border-spacing: 5px;
+    top: 20%;
+    left: 7%;
+    position: absolute;
+    margin-left: 95px;
+}
+.creazioneAggr{
+    height: 250px !important;
+}
+.margine-top-30{
+    margin-top: 30px;
+}
+.margine-top-50{
+    margin-top: 50px;
+}
+
+
+.ord{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.mywell{
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+}
+
+.hrline{
+    border-top: 1px solid #c4c2c2;
+}
+
+.myselect{
+    padding: 6px 8px;
+}
+
+.myoption{
+    background-color: #fff;
+    color: #000;
+}
+
+.categorie:hover{
+    background-color: #ccf2ff !IMPORTANT;
+}
+
+
