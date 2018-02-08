@@ -21,14 +21,29 @@ function selectOrdinamento(stringa)
         $("#ordRatMin").attr("selected", "true");
     }
 }
-function selectOrd( filtro, tag, search)
+
+function selectTag(stringa)
 {
-    if($("#sel1").val() == $("#ordUsiMax").val())
+    
+    var $tag = "#" + stringa.trim();
+    var $ciao;
+    $(".a-button").each(function () {
+        $ciao = $(this).text().trim();
+        if ($ciao === $tag) {
+            
+            $(this).addClass("a-buttonSel");
+        }
+
+    });
+}
+function selectOrd(filtro, tag, search)
+{
+    if ($("#sel1").val() == $("#ordUsiMax").val())
     {
-       window.alert(key); 
+        window.alert(key);
         //window.location.replace("ActionServlet?op=getList&filtro = " + filtro + 
-          //      "&search=" + search + "&tag="+ tag + "&orderBy =utilizziMax");
-        
+        //      "&search=" + search + "&tag="+ tag + "&orderBy =utilizziMax");
+
     }
 }
 function confrontaPassword()
@@ -145,10 +160,16 @@ function selezionaCategoria(filtro) {
     $(".categorie").each(function () {
         $ciao = $(this).text().trim();
         if ($ciao === $filter) {
+            
+            $(this).addClass("categoriaSel");
+        }
 
-            $(this).css("background", "black");
-            $(this).css("color", "white");
-
+    });
+    $(".a-button").each(function () {
+        $ciao = $(this).text().trim();
+        if ($ciao === $filter) {
+            
+            $(this).addClass("a-buttonSel");
         }
 
     });
