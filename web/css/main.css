@@ -4,7 +4,7 @@
 .autoc{
     background: white;
     padding: 6px 12px;
-    
+
 }
 
 .a-button{
@@ -92,11 +92,11 @@ Tibi's custom styles
 }
 .half:before {
 
-      content: "\e006"; /* put here default icon code*/
-      width: 47%;
-      display: block;
-      position: absolute;
-      overflow: hidden;
+    content: "\e006"; /* put here default icon code*/
+    width: 47%;
+    display: block;
+    position: absolute;
+    overflow: hidden;
 
 }
 .half:after {
@@ -105,11 +105,11 @@ Tibi's custom styles
 
 .half-heart:before {
 
-      content: "\e005"; /* put here default icon code*/
-      width: 57%;
-      display: block;
-      position: absolute;
-      overflow: hidden;
+    content: "\e005"; /* put here default icon code*/
+    width: 57%;
+    display: block;
+    position: absolute;
+    overflow: hidden;
 
 }
 .half-heart:after {
@@ -206,14 +206,14 @@ Tibi's custom styles
    ========================================================================== */
 
 .left {
-  float: left;
-  margin-left: 13px
+    float: left;
+    margin-left: 13px
 }
 .glyphicon-search {
-	color: #fff
+    color: #fff
 }
 .mobile_search {
-	margin: 6px 0 5px 0;
+    margin: 6px 0 5px 0;
 }
 
 .navbar{
@@ -257,7 +257,7 @@ Tibi's custom styles
     font-size:12px    
 }
 #login-dp .bottom{
-   /* background-color:rgba(255,255,255,.8);*/
+    /* background-color:rgba(255,255,255,.8);*/
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -346,6 +346,22 @@ Tibi's custom styles
 
 .categorie:hover{
     background-color: #ccf2ff !IMPORTANT;
+    color: #000 !IMPORTANT;
+}
+
+.categoriaSel{
+    background-color: #2691ed !IMPORTANT;
+    color: #fff !IMPORTANT;
+}
+
+.categoriaSel:hover{
+    background-color: #1a73c0 !IMPORTANT;
+    color: #fff !IMPORTANT;
+}
+
+.a-buttonSel{
+    background-color: #2691ed !IMPORTANT;
+    color: #fff !IMPORTANT;
 }
 
 
