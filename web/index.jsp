@@ -333,6 +333,7 @@
 <script>
   $(document).ready(selezionaCategoria('<%=filter%>'));
   $(document).ready(selectOrdinamento('${ordinamento}'));
+  $(document).ready(selezionaTag('<%=tag%>'));
 </script>
 </body>
 </html>
