@@ -390,7 +390,7 @@
                                                     <h4 class="modal-title"><fmt:message key="modalVoteTitle"/> <%=service.getNome()%></h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <div class="dialogo" nome="<%=service.getId()%>" title="Vota ">
+                                                    <div class="hidden modalConfermaVoto" nome="<%=service.getId()%>" title="Vota ">
                                                         <ol class="listVotiOl">
                                                             <li class="ui-widget-content puntatore"><fmt:message key="voteString1"/><span class='labelVoto right'><fmt:message key="voteValue1"/></span></li>
                                                             <li class="ui-widget-content puntatore"><fmt:message key="voteString2"/><span class='labelVoto right'><fmt:message key="voteValue2"/></span></li>
@@ -405,29 +405,36 @@
                                                         <br>
 
                                                     </div>
-                                                    <div class="hidden modalConfermaVoto text-center" >
+                                                    <div class="dialogo text-center" >
                                                         <p class="textConfermaVoto"><fmt:message key="voteMessage1"/> <b> <%=service.getNome()%> </b> <fmt:message key="voteMessage2"/></p>
                                                         <br>
+
                                                         <div class="row">
 
                                                             <div class="center-block">
-                                                                <button type="button" class="btn btn-success yesBtn" onclick="si('<%=service.getId()%>');"><a><fmt:message key="yesButton"/></a></button>
-                                                                <button type="button" class="btn btn-success noBtn" onclick="noA('<%=service.getId()%>');"><a><fmt:message key="noButton"/></a></button>
+                                                                <button type="button" class="btn btn-default yesBtn" onclick="si('<%=service.getId()%>');"><fmt:message key="yesButton"/></button>
+                                                                <button type="button" class="btn btn-default noBtn" onclick="noA('<%=service.getId()%>');"><fmt:message key="noButton"/></button>
                                                             </div>
                                                         </div>
                                                         <br>
                                                     </div>
+
                                                     <div class="msgModal hidden">
-                                                        <ul class="listaAggregazioni hidden list-group checked-list-box" onclick="abilitaVotoAggr()">
+                                                        <p class="textScegliMU"><fmt:message key="voteMessage3"/> <b> <%=service.getNome()%> </b></p>
+                                                        <ul class="listaAggregazioni list-group checked-list-box" onclick="abilitaVotoAggr()">
                                                         </ul>
-                                                        <div class="jumbotron feedbackVoto hidden">                                                           
+
+                                                    </div>
+                                                    <div class="resultVote hidden">
+                                                        <div class="jumbotron feedbackVoto"><h3><fmt:message key="voteWaitMessage"/> </h3>                                                           
                                                         </div>
                                                     </div>
 
                                                     <div class="modal-footer">
-                                                        <button class="btn btnIndietro glyphicon glyphicon-chevron-left pull-left btn-default hidden" onclick="indietro()"></button>
-                                                        <button type="button" class="btn btn-primary hidden disabled confermaButton" onclick="confermaVoto('<%=service.getId()%>','<fmt:message key="voteSuccessMessage2"/>','<fmt:message key="voteErrorMessage"/>')"><a><fmt:message key="confirmButton"/></a></button>                                                               
-                                                        <button class="btn btn-primary confermaVoto" disabled="true" onclick="modal2()"><fmt:message key="confirmButton"/></button>
+                                                        <button class="btn btnIndietro glyphicon glyphicon-chevron-left pull-left btn-default hidden" onclick="indietroFromVotoToMU('<%=service.getId()%>')"></button>
+                                                        <button class="btn btnIndietro0 glyphicon glyphicon-chevron-left pull-left btn-default hidden" onclick="indietroFromMUToDialog('<%=service.getId()%>')"></button>
+                                                        <button type="button" class="btn btn-primary hidden disabled BtnConfermaVoto" onclick="confermaVoto('<%=service.getId()%>', '<fmt:message key="voteWaitMessage"/>', '<fmt:message key="voteSuccessMessage2"/>', '<fmt:message key="voteErrorMessage"/>')"><fmt:message key="confirmButton"/></button>                                                               
+                                                        <button class="btn btn-primary btnScegliMU disabled hidden" onclick="modal2()"><fmt:message key="confirmButton"/></button>
                                                         <button  type="button" class="btn btn-danger closeButton" data-dismiss="modal"><fmt:message key="closeButton"/></button>
                                                     </div>
 

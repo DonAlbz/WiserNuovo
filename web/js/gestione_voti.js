@@ -3,17 +3,19 @@ var votoSel;// e' il voto selezionato dall'utente
 function apriModalVoto() {
 
     $(".btnIndietro").addClass("hidden");
+    $(".btnIndietro0").addClass("hidden");
     $(".ui-widget-content").removeClass("ui-selected");
     $(".listaAggregazioni").html('');
     $(".modalConfermaVoto").addClass("hidden");
-    $(".confermaButton").addClass("hidden").addClass("disabled");
+    $(".BtnConfermaVoto").addClass("hidden").addClass("disabled");
     $(".listaAggregazioni").addClass("hidden");
     $(".msgModal").addClass("hidden");
     $(".noBtn").removeClass("disabled");
     $(".yesBtn").removeClass("disabled");
     $(".feedbackVoto").addClass("hidden");
+    $(".resultVote").addClass("hidden");
     $(".dialogo").removeClass("hidden");
-    $(".confermaVoto").removeClass("hidden");
+    //$(".btnScegliMU").removeClass("hidden");
 
 }
 function selezione(nome_modal) {
@@ -24,20 +26,20 @@ function selezione(nome_modal) {
         "0.75": "EXCELLENT", "0.875": "OUTSTANDING", "1.0": "EXCEPTIONAL"};
     // nome_modal Ã¨ l'id del dataService
 
-
-    $(".confermaVoto").attr("disabled", true);
+    
+    $(".BtnConfermaVoto").addClass("disabled");
     $("ol").selectable({
         selected: function (event, ui) {
             $(ui.selected).addClass('ui-selected').siblings().removeClass('ui-selected');
         },
 
         stop: function () {
-            $(".confermaVoto").attr("disabled", true);
+            $(".BtnConfermaVoto").addClass("disabled");
             $(".ui-selected", this).each(function () {
                 votoSel = $(".ui-selected").children().first().html();
                 $(".votoScelto").html(votiNum[votoSel]);
                 if (votoSel !== "") {
-                    $(".confermaVoto").attr("disabled", false);
+                    $(".BtnConfermaVoto").removeClass("disabled");
                 }
             });
         }
@@ -49,19 +51,32 @@ function selezione(nome_modal) {
 function modal2() {
     // nome_modal + l'id del DataService
     // mostro pagina2 modal
-    $(".confermaButton").addClass("disabled");
+    $(".btnScegliMU").addClass("disabled");
+    $(".btnScegliMU").addClass("hidden");
     $(".btnIndietro").removeClass("hidden");
-    $(".modalConfermaVoto").removeClass("hidden");
+    $(".btnIndietro0").addClass("hidden");
+    $(".modalConfermaVoto").removeClass("hidden");  
     $(".confermaButton").removeClass("hidden");
-    $(".msgModal").removeClass("hidden");
+    $(".msgModal").addClass("hidden");
     // nascondo pagina1 modal
     $(".dialogo").addClass("hidden");
-    $(".confermaVoto").addClass("hidden");
+    $(".listaAggregazioni").addClass("hidden");
+    $(".BtnConfermaVoto").removeClass("hidden");
 }
 
 
-function confermaVoto(id_s, msg1, msg2) {
-
+function confermaVoto(id_s, msg0, msg1, msg2) {
+    
+    $(".btnIndietro").addClass("hidden");
+    $(".modalConfermaVoto").addClass("hidden");
+     $(".BtnConfermaVoto").addClass("disabled");
+    $(".BtnConfermaVoto").addClass("hidden");
+    $(".msgModal").addClass("hidden");
+    $(".listaAggregazioni").addClass("hidden");
+    $(".resultVote").removeClass("hidden");
+    $(".feedbackVoto").removeClass("hidden");
+    $(".progress-bar").removeClass("hidden");
+    $(".btnIndietro0").addClass("hidden");
     var jsonAgg;
 
     no = false;
@@ -96,30 +111,27 @@ function confermaVoto(id_s, msg1, msg2) {
                 var verifica = false;
                 //alert('sono in response: ' + response.toString());
                 if (response.toString().trim() === "true") {
-                    $(".feedbackVoto").html(" <h3>" + msg1 + "</h3>");
+                    setTimeout(function () {
+                    $(".feedbackVoto").html(" <h3>" + msg1 + "</h3>");},1000);
                     verifica = true;
                 }
 
                 if (response.toString().trim() === "okAggr") {
-                    $(".feedbackVoto").html(" <h3>" + msg1 + "</h3>");
+                    setTimeout(function () {
+                    $(".feedbackVoto").html(" <h3>" + msg1 + "</h3>");},1000);
                     verifica = true;
                 }
                 if (verifica === false) {
-                    $(".feedbackVoto").html(" <h3>" + msg2 + "</h3>");
+                    setTimeout(function () {
+                    $(".feedbackVoto").html(" <h3>" + msg2 + "</h3>");},1000);
                 }
 
             }, "text");
 
-    $(".btnIndietro").addClass("hidden");
-    $(".modalConfermaVoto").addClass("hidden");
-    
-    setTimeout(function () {
-        $(".feedbackVoto").removeClass("hidden");
-    }, 1000);
-    
-    $(".confermaButton").addClass("disabled");
 
-    $(".listaAggregazioni").addClass("hidden");
+    //setTimeout(function () {
+    //    $(".feedbackVoto").removeClass("hidden");
+    //}, 1000);
 
 }
 
@@ -154,7 +166,6 @@ function insertCheck() {
 var xhr;
 
 function visAggr(id_s) {
-
     var url = "ActionServlet?op=aggregationByDS&idDS=" + id_s;
     xhr = myGetXmlHttpRequest();
     xhr.open("GET", url, true);
@@ -194,19 +205,26 @@ function myGetXmlHttpRequest()
 
 
 function noA(id_s) {
-    $(".noBtn").addClass("disabled");
-    $(".yesBtn").removeClass("disabled");
+    $(".btnScegliMU").addClass("disabled");
+    $(".btnScegliMU").addClass("hidden");
+    $(".btnIndietro0").removeClass("hidden");
+    $(".modalConfermaVoto").removeClass("hidden");  
+    $(".confermaButton").removeClass("hidden");
+    $(".msgModal").addClass("hidden");
+    // nascondo pagina1 modal
+    $(".dialogo").addClass("hidden");
     $(".listaAggregazioni").addClass("hidden");
-    $(".listaAggregazioni").empty();
-    abilitaConfermaVoto();
-
+    $(".BtnConfermaVoto").removeClass("hidden");
 }
 
 
 function si(id_s) {
-
     $(".yesBtn").addClass("disabled");
     $(".noBtn").removeClass("disabled");
+    $(".dialogo").addClass("hidden");
+    $(".msgModal").removeClass("hidden");
+    $(".btnScegliMU").removeClass("hidden");
+    $(".btnIndietro0").removeClass("hidden");
     if ($(".listaAggregazioni").html().trim() === '') {
 
         visAggr(id_s);
@@ -216,9 +234,9 @@ function si(id_s) {
 
 function abilitaVotoAggr(){
     if(cercaCheckLi()){
-        abilitaConfermaVoto();     
+        $(".btnScegliMU").removeClass("disabled"); 
     }else{
-        $(".confermaButton").addClass("disabled");
+        $(".btnScegliMU").addClass("disabled");
     }
 }
 
@@ -244,8 +262,39 @@ function indietro() {
     // mostro pagina1 modal
     $(".dialogo").removeClass("hidden");
     $(".confermaVoto").removeClass("hidden");
-
 }
+function indietroFromVotoToMU(id_s) {
+    // nascondo pagina2 modal
+    $(".btnIndietro").addClass("hidden");
+    $(".btnIndietro0").removeClass("hidden");
+    $(".modalConfermaVoto").addClass("hidden");
+    $(".BtnConfermaVoto").addClass("hidden");
+    $(".msgModal").removeClass("hidden");
+    $(".listaAggregazioni").removeClass("hidden");
+    //$(".noBtn").removeClass("disabled");
+    //$(".yesBtn").removeClass("disabled");
+    // mostro pagina1 modal
+    //$(".dialogo").removeClass("hidden");
+    $(".btnScegliMU").removeClass("hidden");
+    $(".btnScegliMU").removeClass("disabled");
+}
+function indietroFromMUToDialog(id_s) {
+    apriModalVoto();
+    $(".btnIndietro").addClass("hidden");
+    $(".ui-widget-content").removeClass("ui-selected");
+    $(".listaAggregazioni").html('');
+    $(".modalConfermaVoto").addClass("hidden");
+    $(".BtnConfermaVoto").addClass("hidden").addClass("disabled");
+    $(".btnScegliMU").addClass("hidden");
+    $(".listaAggregazioni").addClass("hidden");
+    $(".msgModal").addClass("hidden");
+    $(".noBtn").removeClass("disabled");
+    $(".yesBtn").removeClass("disabled");
+    $(".feedbackVoto").addClass("hidden");
+    $(".dialogo").removeClass("hidden");
+    $(".btnIndietro0").addClass("hidden");
+}
+
 
 function checkboxList() {
     $('.list-group.checked-list-box .list-group-item').each(function () {
@@ -326,4 +375,3 @@ function checkboxList() {
     });
 }
 ;
-
