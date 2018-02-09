@@ -151,12 +151,10 @@ var mashSel;
 var nomeMashSel;
 function modificaMashUp(nomeMU, idMU) {
     
-    //Modifiche di Alby per illuminazione mashup in modifica
-    alert($(this).attr('class'));/*.parents('.panel-default')*/
-    $(this).parents('.panel-default').addClass("mashupInModifica");
-    mashupInModifica = $(this).parents('.panel-default'); 
-    mashupInModifica.addClass("mashupInModifica");
-    
+    $(".mashupInModifica").removeClass("mashupInModifica");
+    $("#" + nomeMU + "modifica").parents(".panel-default").addClass("mashupInModifica");
+ 
+
     //Codice Tibi    
     mashSel = idMU;
     //$(".mashCollapse").collapse("hide");
@@ -167,7 +165,7 @@ function modificaMashUp(nomeMU, idMU) {
     $("#" + nomeMU.trim() + "list").find(".delAggr").removeClass("hidden");
     var figli = $("#" + nomeMU + "list").children();
     $(".aggr").attr("disabled", false).removeClass("btn-default").addClass("btn-primary");
-    $(".aggr").removeClass("hidden");
+    $(".aggr").removeClass("hidden");    
     $(".confermaMash").addClass("hidden");
     $(".modificaMash").removeClass("hidden");
     $("#" + nomeMU + "conferma").removeClass("hidden");
@@ -188,6 +186,7 @@ function confermaMashUp(nomeMU) {
     $("#" + nomeMU + "modifica").removeClass("hidden");
     $(".delAggr").addClass("hidden");
     $(".aggr").addClass("hidden");
+    $("#" + nomeMU + "conferma").parents(".panel-default").removeClass("mashupInModifica");
 }
 
 
