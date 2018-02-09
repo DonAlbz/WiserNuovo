@@ -128,6 +128,7 @@
             <div class="list-group">
                 <%
                     int servicesDim = (Integer) request.getAttribute("servicesDim");
+                    int numApis = servicesDim - servicesDim%10;
                     int numPages = Functions.numberOfPages(servicesDim);
                     String filter = (String) request.getAttribute("filtro");
                     String key = (String) request.getAttribute("search");
@@ -159,7 +160,68 @@
                     <div class="row">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="pull-left">
+                                    <%
+                                        if ((filter == null) && (key == null) && (tag == null)) {
+                                    %> 
+                                    <h4>
+                                    <p class="mybreadcrumb">
+                                        <%= numApis %>+ <fmt:message key="titleBread"/> 
+                                    </p>
+                                    </h4>
+                                    <%
+                                        }
+                                    %>
+                                    <h5>
+                                    <%
+                                        if (key != null){
+                                    %> 
+                                    <p class="mybreadcrumb"> <%= servicesDim %> <fmt:message key="msgSearch"/>
+                                    <%
+                                        }
+                                        if ((filter != null)) {
+                                    %>   
+                                    <p class="mybreadcrumb" onmouseover="showXFilter()" onmouseout="hideXFilter()">
+                                        <fmt:message key="categoryBread" /> <%= filter + " "%>  <a href="ActionServlet?op=getList&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>" ><span class="glyphicon delete glyphicon-remove-circle hidden" 
+                                           id="filterBreadX"></span> </a>
+                                    </p>                           
+                                    <%
+                                        }
+                                        
+                                        if ((filter != null) && (tag != null)) {
 
+                                    %>
+                                    <p class="mybreadcrumb">
+                                        >
+                                    </p>
+                                    <%                                         }
+                                        if ((tag != null)) {
+
+                                    %>
+                                    <p class="mybreadcrumb" onmouseover="showXTag()" onmouseout="hideXTag()">
+                                        <fmt:message key="tagBread"/>  #<%= tag %>  <a href="ActionServlet?op=getList&search=<%=key%>&filtro=<%=filter%>&orderBy=<%=ordinamento%>" ><span class="glyphicon delete glyphicon-remove-circle hidden" 
+                                           id="tagBreadX"></span> </a>
+                                    </p>
+                                    <%
+                                        }
+                                        if(((tag != null)||(filter != null))&&(key != null))
+                                        {
+                                    %>
+                                    <p class="mybreadcrumb">  >  </p>
+                                    <%
+                                        }
+                                        if(key != null)
+                                        {
+                                    %>
+                                    <p class="mybreadcrumb text-primary" onmouseover="showXKey()" onmouseout="hideXKey()"> 
+                                        "<%= searchBar.trim() %>"  <a href="ActionServlet?op=getList&tag=<%=tag%>&filtro=<%=filter%>&orderBy=<%=ordinamento%>" ><span class="glyphicon delete glyphicon-remove-circle hidden" 
+                                           id="keyBreadX"></span> </a> </p>
+                                    <%
+                                        }
+                                    %>
+                                    </h5>
+
+                                </div>
                             </div> 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 <div id="orderByDiv" class="pull-right">
@@ -220,7 +282,7 @@
                                             Category selCat = (Category) catTag.next();
                                     %>
 
-                                    <a class="a-button" href="ActionServlet?op=getList&filtro=<%=selCat.getNome()%>"> <%= selCat.getNome()%> </a>
+                                    <a class="a-button catButton" href="ActionServlet?op=getList&search=<%=key%>&filtro=<%=selCat.getNome()%>&orderBy=<%=ordinamento%>&tag=<%=tag%>"> <%= selCat.getNome()%> </a>
 
                                     <%
                                         }
@@ -233,7 +295,7 @@
                                             Tag selTag = (Tag) iterTag.next();
                                     %>
 
-                                    <a class="a-button" href="ActionServlet?op=getList&tag=<%=selTag.getNome()%>"> #<%= selTag.getNome()%> </a>
+                                    <a class="a-button tagButton" href="ActionServlet?op=getList&search=<%=key%>&filtro=<%=filter%>&tag=<%=selTag.getNome()%>&orderBy=<%=ordinamento%>"> #<%= selTag.getNome()%> </a>
 
                                     <%
                                         }
@@ -331,9 +393,10 @@
         });
 </script>-->
 <script>
-  $(document).ready(selezionaCategoria('<%=filter%>'));
-  $(document).ready(selectOrdinamento('${ordinamento}'));
-  $(document).ready(selectTag('${tag}'));
+    $(document).ready(selezionaCategoria('<%=filter%>'));
+    $(document).ready(selectOrdinamento('${ordinamento}'));
+    $(document).ready(selectTag('${tag}')); 
+    $(document).ready(deselect());
 </script>
 </body>
 </html>

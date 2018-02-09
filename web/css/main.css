@@ -374,4 +374,13 @@ Tibi's custom styles
     color: #fff !IMPORTANT;
 }
 
+.mybreadcrumb{
+    float: left;
+    margin: 3px;
+}
+
+.delete{
+    color: #000;
+    font-size: 12px;
+}
 
