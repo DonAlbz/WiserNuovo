@@ -64,7 +64,6 @@ function selectTag(stringa)
 function selectPage(stringa)
 {
     var $start = stringa.trim();
-    var $ciao;
     $(".pagSel").each(function () {
         if ($start === '0'){            
             $("#page1").addClass("a-buttonSel");

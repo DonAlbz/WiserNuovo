@@ -64,7 +64,7 @@
 
                     <div class="navbar-header col-xs-1 col-lg-1 col-md-1 col-sm-1 ">
                         <%String nomeSessione = session.getAttribute("name").toString();%>                                                           
-                        <a class="navbar-brand" href="ActionServlet?op=getList2&nomeU=<%=nomeSessione%>"><fmt:message key="titleNavbar"/></a>
+                        <a class="navbar-brand My-navbar-brand" href="ActionServlet?op=getList2&nomeU=<%=nomeSessione%>"><fmt:message key="titleNavbar"/></a>
                     </div>
                     <div class="navbar-header col-sm-2 col-md-2 col-lg-2  ">
 
@@ -115,7 +115,7 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <!-- Trigger the modal with a button -->
-                            <li><a href="#"><button id="btnCreaMeshup" type="button" class="btn margine" onclick="apriWizard()"><fmt:message key="buttonNewMashup"/></button></a></li>
+                            <li><a href="#"><button id="btnCreaMeshup" type="button" class="btn margine mybtn-primary" onclick="apriWizard()"><fmt:message key="buttonNewMashup"/></button></a></li>
                             <!--         <li><a href="#"><button id="confirmMeshup" type="button" class="btn btn-warning margine hidden">Conferma</button></a></li>  -->
 
                             <!-- Modal -->
@@ -163,8 +163,8 @@
                                 </div>
                             </div>
 
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span><%=nomeSes%></a></li>
-                            <li><a href="ActionServlet?op=logout"><span class="glyphicon glyphicon-log-out"></span><fmt:message key="logoutButton"/></a></li>
+                            <li><a class="my-navbar-rightUt"><span class="glyphicon glyphicon-user"></span><%=nomeSes%></a></li>
+                            <li><a class="my-navbar-rightUt" href="ActionServlet?op=logout"><span class="glyphicon glyphicon-log-out"></span><fmt:message key="logoutButton"/></a></li>
                         </ul>
 
                     </div> 
@@ -205,6 +205,7 @@
                         int servicesDim = (Integer) request.getAttribute("servicesDim");
                         int numApis = servicesDim - servicesDim % 10;
                         int numPages = Functions.numberOfPages(servicesDim);
+                        int start = (Integer) request.getAttribute("start");
                         String filter = (String) request.getAttribute("filtro");
                         String key = (String) request.getAttribute("search");
                         if ((key != null)) {
@@ -493,7 +494,7 @@
                                                         <div class="row">
 
                                                             <div class="center-block">
-                                                                <button type="button" class="btn btn-default yesBtn" onclick="si('<%=service.getId()%>');"><fmt:message key="yesButton"/></button>
+                                                                <button type="button" class="btn btn-default yesBtn " onclick="si('<%=service.getId()%>');"><fmt:message key="yesButton"/></button>
                                                                 <button type="button" class="btn btn-default noBtn" onclick="noA('<%=service.getId()%>');"><fmt:message key="noButton"/></button>
                                                             </div>
                                                         </div>
@@ -645,7 +646,7 @@
 
                     %>
 
-                    <li><a class="puntatore" onclick="doHref('ActionServlet?op=getList2&start=<%=i * DSPerPag%>&filtro=<%=filter%>&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>&nomeU=<%=nome_utente%>')"><%=i + 1%></a></li>
+                    <li><a id='page<%=i + 1%>' class="pagSel puntatore" onclick="doHref('ActionServlet?op=getList2&start=<%=i * DSPerPag%>&filtro=<%=filter%>&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>&nomeU=<%=nome_utente%>')"><%=i + 1%></a></li>
 
                     <%
                             }
@@ -680,6 +681,8 @@
                         $(document).ready(selectTag('${tag}'));
                         $(document).ready(deselectUt());
                         $(document).ready(selectMash('<%=nomeMash%>', '<%=idMash%>'));
+                        $(document).ready(selectPage('${start}'));
+
     </script>
     <script src="js/gestione_voti.js"></script>
     <%
