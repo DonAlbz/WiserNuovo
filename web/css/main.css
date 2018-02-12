@@ -55,6 +55,9 @@ html, body {
 /* ==========================================================================
 Tibi's custom styles
    ========================================================================== */
+.my-glyphicon-ok {
+    color : blue !IMPORTANT;
+}
 
 .btnTransparent{
     border-color: transparent;
@@ -200,6 +203,18 @@ Tibi's custom styles
 .posizionaModal {
     margin-top: 130px;
 }
+
+.My-navbar-brand {
+    font-size: 50px !IMPORTANT;
+    color: #fff !IMPORTANT;
+}
+
+.my-navbar-right {
+    color : #fff !IMPORTANT;
+    font-size: 18px !IMPORTANT;
+}
+
+
 
 /* ==========================================================================
    Alb's custom styles

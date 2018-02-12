@@ -24,7 +24,6 @@ function selectOrdinamento(stringa)
 
 function selectTag(stringa)
 {
-    
     var $tag = "#" + stringa.trim();
     var $ciao;
     $(".a-button").each(function () {
@@ -36,6 +35,29 @@ function selectTag(stringa)
 
     });
 }
+
+
+function selectPage(stringa)
+{
+    var $start = stringa.trim();
+    var $ciao;
+    $(".pagSel").each(function () {
+        if ($start === '0'){            
+            $("#page1").addClass("a-buttonSel");
+        }
+        if ($start === '8') {
+            $("#page2").addClass("a-buttonSel");
+        }
+        if ($start === '16') {
+            $("#page3").addClass("a-buttonSel");
+        }
+
+    });
+}
+        
+
+
+
 function selectOrd(filtro, tag, search)
 {
     if ($("#sel1").val() == $("#ordUsiMax").val())
