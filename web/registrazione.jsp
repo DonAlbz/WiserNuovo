@@ -53,7 +53,7 @@
                 <div class="row">      
                     <div class="navbar-header col-lg-1 col-md-1 col-sm-1">
 
-                        <a class="navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                       
+                        <a class="navbar-brand My-navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                       
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#">
 
                             <!--<span class="glyphicon glyphicon-user white" aria-hidden="true"></span>-->
@@ -129,7 +129,7 @@
                                 <!-- Button -->
                                 <div class="form-group">
 
-                                    <button type="button" id="daAbilitare" class="btn btn-success disabled center-block" onclick="confermaRegistrazione('<fmt:message key="welcomeRegister"/>')"><fmt:message key="accountConfirmButton"/></button>
+                                    <button type="button" id="daAbilitare" class="btn  mybtn-primary disabled center-block" onclick="confermaRegistrazione('<fmt:message key="welcomeRegister"/>')"><fmt:message key="accountConfirmButton"/></button>
                                 </div>
                             </div>
                         </fieldset>

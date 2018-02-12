@@ -478,7 +478,7 @@
                                 <a data-toggle="collapse" href="#collapse<%=nome%>"><%=nome%></a>
 
                                 <button id="<%=nome%>elimina" class="glyphicon glyphicon-trash pull-right btnTransparent" data-toggle="modal" data-target="#deleteMashup<%=nome%>"></button>
-                                <button id="<%=nome%>conferma" onclick="confermaMashUp('<%=nome%>')" class="hidden confermaMash glyphicon glyphicon-ok pull-right btnTransparent"></button>
+                                <button id="<%=nome%>conferma" onclick="confermaMashUp('<%=nome%>')" class="hidden confermaMash glyphicon my-glyphicon-ok glyphicon-ok pull-right btnTransparent"></button>
                                 <button id="<%=nome%>modifica" onclick="modificaMashUp('<%=nome%>', '<%=aggr.getId()%>')" class="glyphicon modificaMash glyphicon glyphicon-edit pull-right btnTransparent"></button> 
 
                                 <div id="deleteMashup<%=nome%>" class="modal fade" role="dialog">

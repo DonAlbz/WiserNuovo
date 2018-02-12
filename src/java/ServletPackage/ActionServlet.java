@@ -158,6 +158,7 @@ public class ActionServlet extends HttpServlet {
         req.setAttribute("list", servicesParsed);
         req.setAttribute("cats", categories);
         req.setAttribute("orderBy", order);
+        req.setAttribute("start", start);
         rd.forward(req, resp);
     }
 

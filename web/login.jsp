@@ -24,7 +24,7 @@
                 <div class="row">      
                     <div class="navbar-header col-lg-1 col-md-1 col-sm-1">
 
-                        <a class="navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                   
+                        <a class="navbar-brand My-navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                   
                         
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#search">
 
@@ -102,7 +102,7 @@
                             <!-- Button -->
                             <div class="controls">
                                 <br><br>
-                                <button class="btn btn-success center-block"><fmt:message key="loginButton"/></button>
+                                <button class="btn center-block mybtn-primary"><fmt:message key="loginButton"/></button>
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@
                             </div>
                             <br>
 
-                            <a class="text-success" href="registrazione.jsp"><h4><fmt:message key="accountLink"/></h4></a>
+                            <a class="text-primary" href="registrazione.jsp"><h4><fmt:message key="accountLink"/></h4></a>
                         </div>
 
                     </fieldset>

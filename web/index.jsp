@@ -38,7 +38,7 @@
             <div class="container-fluid" id="container-nav">
                 <div class="row">      
                     <div class="navbar-header col-xs-12 col-xs-offset-4 col-sm-offset-0 col-lg-2 col-md-2 col-sm-2">
-                        <a class="navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                        
+                        <a class="navbar-brand My-navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                        
                     </div>
 
                     <div class="navbar-header col-xs-12 col-sm-8 col-sm-offset-1  col-lg-8 col-md-8">
@@ -81,7 +81,7 @@
                     <div class="col-xs-12 col-lg-1 col-md-1 col-sm-1 pull-right ">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span>  <fmt:message key="loginButton"/></a>
+                                <a href="login.jsp" class="my-navbar-right"><span class="glyphicon glyphicon-log-in "></span>  <fmt:message key="loginButton"/></a>
 
                             </li>
                         </ul>
@@ -130,6 +130,7 @@
                     int servicesDim = (Integer) request.getAttribute("servicesDim");
                     int numApis = servicesDim - servicesDim%10;
                     int numPages = Functions.numberOfPages(servicesDim);
+                    int start = (Integer) request.getAttribute("start");
                     String filter = (String) request.getAttribute("filtro");
                     String key = (String) request.getAttribute("search");
                     if (key != null) {
@@ -361,7 +362,7 @@
 
                 %>
 
-                <li><a href="ActionServlet?op=getList&start=<%=i * DSPerPag%>&filtro=<%=filter%>&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>"><%=i + 1%></a></li>
+                <li><a id='page<%=i + 1%>' class="pagSel" href="ActionServlet?op=getList&start=<%=i * DSPerPag%>&filtro=<%=filter%>&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>"><%=i + 1%></a></li>
 
                 <%
                         }
@@ -393,10 +394,12 @@
         });
 </script>-->
 <script>
-    $(document).ready(selezionaCategoria('<%=filter%>'));
-    $(document).ready(selectOrdinamento('${ordinamento}'));
-    $(document).ready(selectTag('${tag}')); 
-    $(document).ready(deselect());
+
+  $(document).ready(selezionaCategoria('<%=filter%>'));
+  $(document).ready(selectOrdinamento('${ordinamento}'));
+  $(document).ready(selectTag('${tag}'));
+  $(document).ready(selectPage('${start}'));
+
 </script>
 </body>
 </html>
