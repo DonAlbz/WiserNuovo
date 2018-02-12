@@ -18,6 +18,7 @@
      text-decoration: none;
      background-color: #2691ed !important;
      color: #ffffff;
+     cursor: pointer;
 }
 
 .autoc-selected{
@@ -399,3 +400,20 @@ Tibi's custom styles
     font-size: 12px;
 }
 
+.delete:hover{
+    cursor: pointer;
+}
+
+.votiBottoni{
+    margin-top: 45px;
+    text-align: center;
+}
+
+.div-menu{
+    margin-bottom: 5px;
+}
+
+.xBread{
+    float: right;
+    margin-left: 5px;
+}

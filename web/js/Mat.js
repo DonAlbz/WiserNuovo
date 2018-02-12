@@ -191,6 +191,43 @@ function deselect()
     });
 }
 
+function deselectUt()
+{
+    var url = $(".categoriaSel").children(".nascosto").attr("value");
+    console.log(url);
+    if (url != null)
+    {
+        var array = url.split("filtro=");
+        var newurl = "";
+        for (i = 0; i < array.length; i++)
+        {
+            newurl = newurl + array[i];
+        }
+        $(".categoriaSel").children(".nascosto").attr("value", newurl);
+        $(".catButton").each(function () {
+            if ($(this).hasClass("a-buttonSel"))
+            {
+                $(this).children(".nascosto").attr("value", newurl);
+            }
+        });
+    }
+
+    $(".tagButton").each(function () {
+        if ($(this).hasClass("a-buttonSel"))
+        {
+            var newurl1 = "";
+            var url1 = $(this).children(".nascosto").attr("value");
+            console.log(url1);
+            array = url1.split("tag=");
+            for (i = 0; i < array.length; i++)
+            {
+                newurl1 = newurl1 + array[i];
+            }
+            $(this).children(".nascosto").attr("value", newurl1);
+        }
+    });
+}
+
 function selezionaCategoriaUt(filtro) {
     var $filter = filtro.trim();
     var $ciao;
