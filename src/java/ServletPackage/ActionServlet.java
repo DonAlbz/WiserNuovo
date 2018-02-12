@@ -207,6 +207,10 @@ public class ActionServlet extends HttpServlet {
             servicesFiltered = getCategoryDS(catFilter, servicesFiltered);
             req.setAttribute("filtro", catFilter);
         }
+        if ((tagFilter != null) && (!tagFilter.equalsIgnoreCase("") && (!tagFilter.equalsIgnoreCase("null")))) {
+            servicesFiltered = getTagDS(tagFilter, servicesFiltered);
+            req.setAttribute("tag", tagFilter);
+        }
         String order = req.getParameter("orderBy");
         servicesOrdered = Functions.orderDSList(servicesFiltered, order, req);
         servicesParsed = Functions.parseDSList(servicesOrdered, start);
