@@ -2,9 +2,10 @@
 /* ==========================================================================
    Sara's custom styles
    ========================================================================== */
-.modal-header {background: #5cb85c;color: white;}
-
-
+.modal-header {
+    background: #2691ed;
+    color: white;
+}
 /* voto nello span*/
 
 .labelVoto {
@@ -52,6 +53,7 @@
     margin: 0; 
     padding: 0; 
     width: 100%;
+    
 }
 .listaAggregazioni li{ 
     margin-top: 4pt;
@@ -61,22 +63,28 @@
     margin-left: 10pt;
 }
 
-.btn a{
-    color:white;
-}
-.btn a:hover{
-    color:white;
-}
 
-.btn a:hover {
+.yesBtn{
+    color: #003eff;
+}
+.noBtn{
+    color: #003eff;
+}
+.noBtn:hover{
+    color: white!important;
+    text-decoration: none;
+}
+.yesBtn:hover{
+    color: white;
     text-decoration: none;
 }
 
 .feedbackVoto{
     background: transparent !important;
-    color: #1aa51c;
+    background-color: #ccf2ff;
+    color: #204d74;
     border-style: solid;    
-    border-color: #dcecdc;
+    border-color: #2691ed;
     border-width: 2px;
     border-spacing: 5px;
     top: 20%;
@@ -86,14 +94,17 @@
 }
 
 .msgModal{
-    height: 300px !important;
+    height: 384px !important;
 }
 
+.resultVote{
+    height: 300px;
+}
 
 .listaAggregazioni{    
 
     width:635px; 
-    height: 280px; 
+    height: 324px; 
     overflow-y: scroll; 
 
 }

@@ -22,14 +22,38 @@ function selectOrdinamento(stringa)
     }
 }
 
+function showXFilter() {
+    $("#filterBreadX").removeClass("hidden");
+}
+
+function hideXFilter() {
+    $("#filterBreadX").addClass("hidden");
+}
+
+function showXTag() {
+    $("#tagBreadX").removeClass("hidden");
+}
+
+function hideXTag() {
+    $("#tagBreadX").addClass("hidden");
+}
+
+function showXKey() {
+    $("#keyBreadX").removeClass("hidden");
+}
+
+function hideXKey() {
+    $("#keyBreadX").addClass("hidden");
+}
+
 function selectTag(stringa)
 {
     var $tag = "#" + stringa.trim();
     var $ciao;
     $(".a-button").each(function () {
         $ciao = $(this).text().trim();
-        if ($ciao === $tag) {
-            
+        if ($ciao == $tag) {
+
             $(this).addClass("a-buttonSel");
         }
 
@@ -131,6 +155,42 @@ $('#centra').on('keyup keypress', function (e) {
     }
 });
 
+function deselect()
+{
+    var url = $(".categoriaSel").attr("href");
+    if (url != null)
+    {
+        var array = url.split("filtro=");
+        var newurl = "";
+        for (i = 0; i < array.length; i++)
+        {
+            newurl = newurl + array[i];
+        }
+        $(".categoriaSel").attr("href", newurl);
+        $(".catButton").each(function () {
+            if ($(this).hasClass("a-buttonSel"))
+            {
+                $(this).attr("href", newurl);
+            }
+        });
+    }
+
+    $(".tagButton").each(function () {
+        if ($(this).hasClass("a-buttonSel"))
+        {
+            var newurl1 = "";
+            var url1 = $(this).attr("href");
+            console.log(url1);
+            array = url1.split("tag=");
+            for (i = 0; i < array.length; i++)
+            {
+                newurl1 = newurl1 + array[i];
+            }
+            $(this).attr("href", newurl1);
+        }
+    });
+}
+
 function selezionaCategoriaUt(filtro) {
     var $filter = filtro.trim();
     var $ciao;
@@ -182,7 +242,7 @@ function selezionaCategoria(filtro) {
     $(".categorie").each(function () {
         $ciao = $(this).text().trim();
         if ($ciao === $filter) {
-            
+
             $(this).addClass("categoriaSel");
         }
 
@@ -190,11 +250,12 @@ function selezionaCategoria(filtro) {
     $(".a-button").each(function () {
         $ciao = $(this).text().trim();
         if ($ciao === $filter) {
-            
+
             $(this).addClass("a-buttonSel");
         }
-
     });
+
+
 }
 ;
 
