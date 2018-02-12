@@ -399,6 +399,7 @@
   $(document).ready(selectOrdinamento('${ordinamento}'));
   $(document).ready(selectTag('${tag}'));
   $(document).ready(selectPage('${start}'));
+  $(document).ready(deselect());
 
 </script>
 </body>

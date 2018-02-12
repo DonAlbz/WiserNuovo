@@ -525,7 +525,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hidden-xs hidden-sm col-md-1 col-lg-1 margine-top-50">
+                                <div class="hidden-xs hidden-sm col-md-3 col-lg-3 votiBottoni">
                                     <a type="button" id="addAggr<%=service.getId()%>" onclick="aggiungiDataService('<%=service.getId()%>')" class="aggr hidden btn btn-primary">+</a>                   
                                 </div>   
                             </div>
