@@ -73,10 +73,26 @@
 .noBtn:hover{
     color: white!important;
     text-decoration: none;
+    background-color: #2961ed;
 }
 .yesBtn:hover{
     color: white;
     text-decoration: none;
+    background-color: #2961ed;
+
+}
+.feedbackMashup {
+    background: transparent !important;
+    background-color: #ccf2ff;
+    color: #204d74;
+    border-style: solid;    
+    border-color: #2691ed;
+    border-width: 2px;
+    border-spacing: 5px;
+    top: 20%;
+    left: 7%;
+    position: absolute;
+    margin-left: 105px; 
 }
 
 .feedbackVoto{

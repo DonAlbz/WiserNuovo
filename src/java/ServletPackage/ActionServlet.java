@@ -224,6 +224,7 @@ public class ActionServlet extends HttpServlet {
         req.setAttribute("nomeU", nomeU);
         req.setAttribute("nomeAggr", nomeAggr);
         req.setAttribute("idAggr", idAggr);
+        req.setAttribute("start", start);
         rd.forward(req, resp);
     }
 

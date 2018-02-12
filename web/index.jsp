@@ -362,7 +362,7 @@
 
                 %>
 
-                <li><a id='page<%=i + 1%>' class="pagSel" href="ActionServlet?op=getList&start=<%=i * DSPerPag%>&filtro=<%=filter%>&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>"><%=i + 1%></a></li>
+                <li><a id='page<%=i + 1%>' class="pagSel puntatore" href="ActionServlet?op=getList&start=<%=i * DSPerPag%>&filtro=<%=filter%>&search=<%=key%>&tag=<%=tag%>&orderBy=<%=ordinamento%>"><%=i + 1%></a></li>
 
                 <%
                         }
@@ -398,6 +398,7 @@
   $(document).ready(selezionaCategoria('<%=filter%>'));
   $(document).ready(selectOrdinamento('${ordinamento}'));
   $(document).ready(selectTag('${tag}'));
+  $(document).ready(deselect());
   $(document).ready(selectPage('${start}'));
 
 </script>
