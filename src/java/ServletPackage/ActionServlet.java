@@ -298,7 +298,7 @@ public class ActionServlet extends HttpServlet {
 
         String nome = req.getParameter("username");
         String pass = req.getParameter("password");
-        String pass_confirm = req.getParameter("password_confirm");
+        String pass_confirm = req.getParameter("password_confirm").toLowerCase();
 
         hibernate.createDeveloper(nome, pass, 0, pass, pass, pass, nome);
         req.getRequestDispatcher("/login.jsp").forward(req, resp);
@@ -306,15 +306,14 @@ public class ActionServlet extends HttpServlet {
 
     public String validaUtente(String name, String password) {
         String stato = "false";
-        String nome1 = name.toLowerCase();
-        String pwd1 = password.toLowerCase();
+        String nome1 = name;
+        String pwd1 = password;
         Set<Sviluppatore> utenti = hibernate.readDevelopers();
 
         for (Sviluppatore sviluppatore : utenti) {
             if (nome1.equals(sviluppatore.getNome()) && pwd1.equals(sviluppatore.getPassword())) {
                 stato = "true";
-            } else if ((nome1.equals(sviluppatore.getNome().toLowerCase()) && !pwd1.equals(sviluppatore.getPassword().toLowerCase()))
-                    || (!nome1.equals(sviluppatore.getNome().toLowerCase()) && pwd1.equals(sviluppatore.getPassword().toLowerCase()))) {
+            } else if ((nome1.equals(sviluppatore.getNome()) && !pwd1.equals(sviluppatore.getPassword()))) {
                 stato = "diversi";
             }
 
@@ -342,11 +341,11 @@ public class ActionServlet extends HttpServlet {
 
     public boolean cercaUtente(String name) {
         boolean stato = false;
-        String nome1 = name.toLowerCase();
+        String nome1 = name;
         Set<Sviluppatore> utenti = hibernate.readDevelopers();
 
         for (Sviluppatore sviluppatore : utenti) {
-            if (nome1.equals(sviluppatore.getNome().toLowerCase())) {
+            if (nome1.equals(sviluppatore.getNome())) {
                 stato = true;
             }
         }
@@ -518,9 +517,9 @@ public class ActionServlet extends HttpServlet {
 
         Sviluppatore find = null;
         Set<Sviluppatore> s = hibernate.readDevelopers();
-        String nome = nomeS.toLowerCase();
+        String nome = nomeS;
         for (Sviluppatore sviluppatore : s) {
-            if (nome.equals(sviluppatore.getNome().toLowerCase())) {
+            if (nome.equals(sviluppatore.getNome())) {
                 find = sviluppatore;
             }
         }
