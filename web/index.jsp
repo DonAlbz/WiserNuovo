@@ -41,7 +41,7 @@
                         <a class="navbar-brand My-navbar-brand" href="ActionServlet?op=getList"><fmt:message key="titleNavbar"/></a>                        
                     </div>
 
-                    <div class="navbar-header col-xs-12 col-sm-8 col-sm-offset-1  col-lg-8 col-md-8">
+                    <div class="navbar-header col-xs-12 col-sm-7 col-sm-offset-1  col-lg-7 col-md-7">
 
                         <!--search bar-->
                         <!-- <form class="navbar-form   hidden-xs" role="search" action="ActionServlet" method="GET">
@@ -78,7 +78,7 @@
                         </form>
                     </div>
 
-                    <div class="col-xs-12 col-lg-1 col-md-1 col-sm-1 pull-right ">
+                    <div class="col-xs-12 col-lg-2 col-md-2 col-sm-2 pull-right ">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="login.jsp" class="my-navbar-right"><span class="glyphicon glyphicon-log-in "></span>  <fmt:message key="loginButton"/></a>
