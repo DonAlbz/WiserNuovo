@@ -244,7 +244,7 @@
                     <div class="row">
                         <div class="row">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                     <div class="pull-left">
                                         <%
                                             if ((filter == null) && (key == null) && (tag == null)) {
@@ -305,7 +305,7 @@
 
                                     </div>
                                 </div> 
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                     <div id="orderByDiv" class="pull-right">
                                         <label for="sel1" class="mylabel"> <fmt:message key="orderButton" /> </label> <select id="sel1" class="myselect mybtn-primary"
                                                                                                                               onchange="doHref(this.value)">
